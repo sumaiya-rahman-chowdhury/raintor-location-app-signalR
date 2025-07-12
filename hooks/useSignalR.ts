@@ -14,7 +14,7 @@ export const useSignalR = (onReceiver?: (data: LocationData) => void) => {
   const [connected, setConnected] = useState(false);
   useEffect(() => {
     const newConnection = new signalR.HubConnectionBuilder()
-      .withUrl("/Hub")
+      .withUrl("https://tech-test.raintor.com/Hub")
       .withAutomaticReconnect()
       .build();
     setConnection(newConnection);
