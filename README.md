@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+###  Task 2 – Real-Time Location Sharing
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This task implements **real-time location sharing** between users using:
+
+* **React** for frontend UI
+* **Leaflet** for interactive map rendering
+* **SignalR** for WebSocket-based real-time communication
+* **Custom user icons** and live updates on the map
+* **Proxy setup** for local development (`/Hub` to SignalR server)
+
+Each connected user shares their geolocation in real-time and sees others' live positions on the map.
+
+SignalR Hub Endpoint:
+
+```
+https://tech-test.raintor.com/Hub/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+###  Task 3 – Infinite Scrolling User Feed
 
-## Learn More
+This task implements an **infinite scrolling user feed** using:
 
-To learn more about Next.js, take a look at the following resources:
+* **React Query** (`useInfiniteQuery`) for paginated API fetching
+* **Intersection Observer** to detect scroll and load more users
+* **Virtualization** with `react-window` for performance
+* **Skeleton loaders** for better UX while loading
+* **Accessible and responsive** user card design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+API Endpoint used:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+https://tech-test.raintor.com/api/users/GetUsersList?take=10&skip=0
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
