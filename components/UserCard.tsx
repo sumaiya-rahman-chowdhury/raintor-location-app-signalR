@@ -1,4 +1,5 @@
 import { User } from "@/app/types/types";
+import Image from "next/image";
 
 export default function UserCard({ user }: { user: User }) {
   return (
@@ -8,11 +9,14 @@ export default function UserCard({ user }: { user: User }) {
       role="listitem"
       aria-label={`${user.firstName} ${user.lastName}`}
     >
-      <img
-        src={user.image}
-        alt={`${user.firstName} ${user.lastName}`}
-        className="w-16 h-16 rounded-full object-cover border border-gray-100"
-      />
+      <div className="relative w-16 h-16 rounded-full object-cover border border-gray-100">
+        <Image
+          fill
+          src={user.image}
+          alt={`${user.firstName} ${user.lastName}`}
+          className="object-cover"
+        />
+      </div>
 
       <div className="flex-1 space-y-2">
         <h3 className="font-semibold text-gray-800 truncate">

@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <div className="w-full max-w-[1400px] mx-auto">{children}</div>
+        </QueryProvider>
       </body>
     </html>
   );
